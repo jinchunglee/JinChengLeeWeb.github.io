@@ -648,7 +648,7 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    color: #fff !important;
     position: relative;
 }
 
