@@ -14,7 +14,7 @@
     --text-color: #e0e0e0;
     --heading-color: #ffffff;
     --card-bg: #16213e;
-    --alternate-bg: #0f3460; /* 新增，用於奇數部分的背景 */
+    --alternate-bg: #1a1a2e; /* 新增，用於奇數部分的背景 */
 }
 
 * {
@@ -145,6 +145,7 @@ input:checked + .slider::after {
 
 .section {
     padding: 6rem 0;
+    background-color: var(--background-color);
 }
 
 .section-title {
@@ -671,12 +672,14 @@ footer {
 .hero-section h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
+    color: #ffffff !important;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero-section p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
+    color: #ffffff !important;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
@@ -684,7 +687,7 @@ footer {
     font-size: 1.2rem;
     padding: 0.8rem 2rem;
     background-color: var(--primary-color);
-    color: #fff;
+    color: #fff !important;
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -693,6 +696,11 @@ footer {
 .hero-section .btn:hover {
     background-color: var(--secondary-color);
 }
+
+
+
+
+
 
 .section {
     padding: 5rem 0;
@@ -754,5 +762,22 @@ body, p, li, a:not(.btn) {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+}
+
+
+.dark-theme body,
+.dark-theme p,
+.dark-theme li,
+.dark-theme a:not(.btn) {
+    color: var(--text-color);
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6 {
     color: var(--heading-color);
 }
