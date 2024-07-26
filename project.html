@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李晉丞 - 專案展示</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="welcome-message">歡迎來到李晉丞的網站</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home">首頁</a></li>
+                        <li><a href="index.html#about">關於我</a></li>
+                        <li><a href="index.html#skills">技能</a></li>
+                        <li><a href="index.html#projects">專案</a></li>
+                        <li><a href="index.html#activities">課外活動</a></li>
+                        <li><a href="index.html#contact">聯絡我</a></li>
+                        <li class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox" />
+                                <div class="slider round"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-page">
+        <section class="hero">
+            <div class="container">
+                <h1>專案展示</h1>
+                <p>探索我的創新研究和開發成果</p>
+            </div>
+        </section>
+
+        <section id="mr-robotic-arm" class="project-section">
+            <div class="container">
+                <h2>MR 機械手臂開發</h2>
+                <div class="project-content">
+                    <div class="project-info">
+                        <p>利用 HoloLens 2 開發教學系統，實現虛擬與現實的無縫結合。</p>
+                        <ul>
+                            <li>應用 HoloLens 2 的混合實境技術</li>
+                            <li>開發直覺式的機械手臂操作界面</li>
+                            <li>實現實時互動和操作反饋</li>
+                        </ul>
+                    </div>
+                    <div class="project-media">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <img src="Picture\師大.png" alt="MR 機械手臂開發展示">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vr-campus" class="project-section">
+            <div class="container">
+                <h2>校園數位分身 VR</h2>
+                <div class="project-content">
+                    <div class="project-info">
+                        <p>開發虛擬實境校園導覽系統，獲得 IEEE ECICE 最佳會議論文獎。</p>
+                        <ul>
+                            <li>精確建模中原大學校園環境</li>
+                            <li>實現沉浸式虛擬導覽體驗</li>
+                            <li>整合互動式信息展示功能</li>
+                        </ul>
+                    </div>
+                    <div class="project-media">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/ANOTHER_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <img src="path_to_vr_campus_image.jpg" alt="校園數位分身 VR 展示">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 其他項目部分，按照相同結構添加 -->
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 李晉丞的個人網站 | 電機工程師</p>
+        </div>
+    </footer>
+    
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+    
+        if (currentTheme) {
+            document.documentElement.setAttribute('class', currentTheme);
+    
+            if (currentTheme === 'dark-theme') {
+                toggleSwitch.checked = true;
+            }
+        }
+    
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('class', 'dark-theme');
+                localStorage.setItem('theme', 'dark-theme');
+            }
+            else {
+                document.documentElement.setAttribute('class', '');
+                localStorage.setItem('theme', 'light-theme');
+            }    
+        }
+    
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+</body>
+</html>
