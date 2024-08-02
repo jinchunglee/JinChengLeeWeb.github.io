@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電力與能源工程協會研習 - 課外活動詳情</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f5f7fa;
+            --text-color: #34495e;
+            --heading-color: #2c3e50;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .activity-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .activity-title {
+            font-size: 2.5rem;
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-date {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+        }
+
+        .activity-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .activity-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .activity-media {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .activity-image {
+            width: 100%;
+            height: auto;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+
+        .activity-links {
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-right: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .activity-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="activity-header">
+            <h1 class="activity-title">電力與能源工程協會研習</h1>
+            <p class="activity-date">2023年7月15日 - 2023年7月17日</p>
+        </div>
+        
+        <div class="activity-content">
+            <div class="activity-description">
+                <p>在這次為期三天的電力與能源工程協會研習中，我深入了解了台灣的電力布局與相關法規。這次經驗不僅擴展了我的專業知識，還讓我對未來的能源政策有了更深刻的認識。</p>
+                <p>研習的主要內容包括：</p>
+                <ul>
+                    <li>台灣電力系統的現狀和未來規劃</li>
+                    <li>再生能源發展及其在電網中的應用</li>
+                    <li>智慧電網技術和挑戰</li>
+                    <li>能源法規和政策解析</li>
+                </ul>
+                <p>通過與業界專家的交流，我更加堅定了在電力工程領域發展的決心，並對如何將所學知識應用到實際項目中有了更清晰的認識。</p>
+            </div>
+            
+            <div class="activity-media">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <img src="path/to/energy_workshop_image.jpg" alt="電力與能源工程協會研習現場" class="activity-image">
+            </div>
+        </div>
+        
+        <div class="activity-links">
+            <a href="https://example.com/power-engineering-association" target="_blank" class="btn">協會官網</a>
+            <a href="path/to/certificate.pdf" class="btn" download>下載研習證書</a>
+        </div>
+    </div>
+</body>
+</html>
