@@ -1,12 +1,11 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', function() {
-    // 檢查 URL 是否包含錨點
+    // 檢查 URL 是否包含錨點並平滑滾動
     if (window.location.hash) {
-        // 如果有錨點，等待一小段時間後滾動到該位置
         setTimeout(function() {
-            var id = window.location.hash.substring(1);
-            var element = document.getElementById(id);
+            const id = window.location.hash.substring(1);
+            const element = document.getElementById(id);
             if (element) {
                 element.scrollIntoView({behavior: 'smooth'});
             }
@@ -45,4 +44,60 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     toggleSwitch.addEventListener('change', switchTheme, false);
+
+    // 添加頁面載入動畫效果
+    document.body.classList.add('fade-in');
+
+    // 添加滾動監聽器實現導航欄固定效果
+    const header = document.querySelector('header');
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        
+        if (scrollTop === 0) {
+            header.classList.remove('shadow');
+        } else {
+            header.classList.add('shadow');
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+
+    // 添加滾動進度條
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.width = `${scrolled}%`;
+    });
+
+    // 添加頁面載入時的元素動畫
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    animateElements.forEach(element => {
+        observer.observe(element);
+    });
 });
